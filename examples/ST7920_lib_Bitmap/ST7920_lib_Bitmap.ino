@@ -1,7 +1,7 @@
 // (C)2019 Pawel A. Hernik
 
 /*
- 128x64 ST7920 connections (SPI)
+ 128x64 ST7920 connections in SPI mode (only 6 wires between LCD and MCU):
 
  #01 GND  -> GND
  #02 VCC  -> VCC (5V)
@@ -9,7 +9,7 @@
  #05 R/W  -> MOSI/D11
  #06 E    -> CS/D10 or any pin
  #15 PSB  -> GND (for SPI mode)
- #19 BLA  -> VCC od any pin via 300ohm?
+ #19 BLA  -> VCC or any pin via 300ohm
  #20 BLK  -> GND
 */
 
