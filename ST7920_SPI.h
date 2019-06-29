@@ -76,7 +76,7 @@ public:
   void switchBuf(byte b);
   void display(int buf=0);
   void copy(uint8_t x16, uint8_t y, uint8_t w16, uint8_t h, uint8_t buf=0);
-	void gotoXY(byte x, byte y);
+  void gotoXY(byte x, byte y);
   void sleep(bool mode=true);
   void setGfxMode(bool mode=true);
   void printTxt(uint8_t pos, char *str);
@@ -98,23 +98,23 @@ public:
   void drawCircle(uint8_t x0, uint8_t y0, uint8_t radius, uint8_t col);
   void fillCircle(uint8_t x0, uint8_t y0, uint8_t r, uint8_t col);
   void fillCircleD(uint8_t x0, uint8_t y0, uint8_t r, uint8_t col);
-	void setDither(uint8_t s);
+  void setDither(uint8_t s);
   int drawBitmap(const uint8_t *bmp, int x, uint8_t y, uint8_t w, uint8_t h);
   int drawBitmap(const uint8_t *bmp, int x, uint8_t y);
 
   void setFont(const uint8_t* f);
-	void setCR(uint8_t _cr) { cr = _cr; }
-	void setInvert(uint8_t _inv) { invertCh = _inv; }
-	void setFontMinWd(uint8_t wd) { cfont.minCharWd = wd; }
-	void setCharMinWd(uint8_t wd) { cfont.minCharWd = wd; }
-	void setDigitMinWd(uint8_t wd) { cfont.minDigitWd = wd; }
+  void setCR(uint8_t _cr) { cr = _cr; }
+  void setInvert(uint8_t _inv) { invertCh = _inv; }
+  void setFontMinWd(uint8_t wd) { cfont.minCharWd = wd; }
+  void setCharMinWd(uint8_t wd) { cfont.minCharWd = wd; }
+  void setDigitMinWd(uint8_t wd) { cfont.minDigitWd = wd; }
   int printChar(int xpos, int ypos, unsigned char c);
   int printStr(int xpos, int ypos, char *str);
   int charWidth(uint8_t _ch, bool last=true);
   int strWidth(char *txt);
-	unsigned char convertPolish(unsigned char _c);
-	static bool isNumber(uint8_t ch);
-	static bool isNumberExt(uint8_t ch);
+  unsigned char convertPolish(unsigned char _c);
+  static bool isNumber(uint8_t ch);
+  static bool isNumberExt(uint8_t ch);
   void setIsNumberFun(bool (*fun)(uint8_t)) { isNumberFun=fun; }
   
 public:
@@ -133,17 +133,17 @@ public:
   _propFont  cfont;
   /*
   uint8_t xSize;
-	uint8_t ySize;
-	uint8_t ySize8;
-	uint8_t firstCh;
-	uint8_t lastCh;
-	uint8_t minCharWd;
-	uint8_t minDigitWd;*/
+  uint8_t ySize;
+  uint8_t ySize8;
+  uint8_t firstCh;
+  uint8_t lastCh;
+  uint8_t minCharWd;
+  uint8_t minDigitWd;
+  */
   uint8_t cr;  // carriage return mode for printStr
-	uint8_t dualChar;
+  uint8_t dualChar;
   uint8_t invertCh;
-  uint8_t spacing = 1;
-	
+  uint8_t spacing = 1;	
 };
 #endif
 

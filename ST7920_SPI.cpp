@@ -480,8 +480,8 @@ void ST7920_SPI::setFont(const uint8_t* font)
   cfont.ySize = fontbyte(1);
   cfont.firstCh = fontbyte(2);
   cfont.lastCh  = fontbyte(3);
-  cfont.minCharWd = 0;
   cfont.minDigitWd = 0;
+  cfont.minCharWd = 0;
   isNumberFun = &isNumber;
   spacing = 1;
   cr = 0;
@@ -542,11 +542,11 @@ int ST7920_SPI::printChar(int xpos, int ypos, unsigned char c)
     wdR += (cfont.minCharWd-wd-wdL);
   }
   if(xpos+wd+wdL+wdR>SCR_WD) wdR = max(SCR_WD-xpos-wdL-wd, 0);
-  if(xpos+wd+wdL+wdR>SCR_WD) wd = max(SCR_WD-xpos-wdL, 0);
+  if(xpos+wd+wdL+wdR>SCR_WD) wd  = max(SCR_WD-xpos-wdL, 0);
   if(xpos+wd+wdL+wdR>SCR_WD) wdL = max(SCR_WD-xpos, 0);
 
   for(x=0; x<wd; x++) {
-    byte mask = 0x80 >> ((xpos+x)&7);
+    byte mask = 0x80 >> ((xpos+x+wdL)&7);
     for(y8=0; y8<fht8; y8++) {
       d = fontbyte(cdata+x*fht8+y8);
       int lastbit = cfont.ySize - y8 * 8;
