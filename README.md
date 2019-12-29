@@ -34,3 +34,7 @@ https://youtu.be/JAJcGKE-0k0
  |#15| PSB|  GND (for SPI mode)|
  |#19| BLA | D9, VCC or any pin via 300ohm resistor|
  |#20| BLK | GND|
+
+If you find it useful and want to buy me a coffee or a beer:
+
+https://www.paypal.me/cbm80amiga
